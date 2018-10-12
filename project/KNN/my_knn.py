@@ -214,7 +214,7 @@ def datingClassTest():
     errorCount = 0
     for i in range(numTestVecs):
         # 对数据测试
-        classifierResult = classify0(normMat[i], normMat[numTestVecs : m], datingLabels[numTestVecs : m], 3)
+        classifierResult = classify0(normMat[i], normMat[numTestVecs : m], datingLabels[numTestVecs : m], 4)
         print("the classifier came back with: %d, the real answer is: %d" % (classifierResult, datingLabels[i]))
         errorCount += classifierResult != datingLabels[i]
     print("the total error rate is: %f" % (errorCount / numTestVecs))
