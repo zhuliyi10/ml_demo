@@ -3,6 +3,7 @@ import pickle
 from sklearn import datasets
 from sklearn import svm
 from sklearn.externals import joblib
+from sklearn.model_selection import train_test_split
 
 
 def trainModel(x, y):
@@ -37,8 +38,9 @@ def restoreJoblibModel():
 if __name__ == '__main__':
     iris = datasets.load_iris()
     x, y = iris.data, iris.target
-    # saveJoblibModel(x,y)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
+    # saveJoblibModel(x_train,y_train)
     clf = restoreJoblibModel()
-    p = x
-    print(clf.predict(p))
-    print(y)
+    print(clf.score(x_test, y_test))
+    print(clf.predict(x_test))
+    print(y_test)
