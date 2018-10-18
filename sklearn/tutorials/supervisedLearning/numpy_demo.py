@@ -8,3 +8,6 @@ output=np.random.uniform(1,10,(2,2))#指定范围
 print(output.dtype)
 output=np.random.rand()#产生一个0--1随机数
 print(output)
+
+output=np.logspace(0,1,10)
+print(output)
