@@ -6,6 +6,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neural_network import MLPClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
@@ -59,6 +60,13 @@ def gaussian_nb():
     print('GaussianNB:', clf.score(X_test, y_test))
 
 
+# 神经网络
+def network():
+    clf = MLPClassifier()
+    clf.fit(X_train, y_train)
+    print('MLPClassifier:', clf.score(X_test, y_test))
+
+
 if __name__ == '__main__':
     logistic_regression()
     svc()
@@ -66,3 +74,4 @@ if __name__ == '__main__':
     sgd()
     decision_tree()
     gaussian_nb()
+    network()
