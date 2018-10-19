@@ -1,5 +1,6 @@
 import numpy as np
 from sklearn import datasets
+from sklearn import preprocessing
 from sklearn.linear_model import LogisticRegression
 from sklearn.linear_model import SGDClassifier
 from sklearn.model_selection import cross_val_score
@@ -15,6 +16,14 @@ X = digits.data
 y = digits.target
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
+print(X_train)
+X_train = preprocessing.scale(X_train)
+# X_train=preprocessing.MaxAbsScaler().fit_transform(X_train)
+print(X_train)
+X_test = preprocessing.scale(X_test)
+
+
+# X_test=preprocessing.MaxAbsScaler().fit_transform(X_test)
 
 # 逻辑回归
 def logistic_regression():
