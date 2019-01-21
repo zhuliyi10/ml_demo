@@ -1,13 +1,18 @@
-import numpy
+import numpy as np
+"""
+新建一个特殊数组
+"""
 
-array = numpy.zeros((2, 3))
+array = np.zeros((2, 3))# 值为0的数组
 print(array)
 
-array = numpy.ones((3, 4))
+array = np.ones((3, 4))# 值为1的数组
 print(array)
-array = numpy.empty((2, 3))
+array = np.empty((2, 3))# 空值数组,值默认也是0
 print(array)
-array = numpy.arange(12).reshape(3, 4)
+#arange就是产生某个范围的系列，类型默认int
+array = np.arange(12).reshape(3, 4)
 print(array)
-array = numpy.linspace(1, 10, 10).reshape(2, 5)
+# np.linspace就是生成线性系列，功能与arange相似
+array = np.linspace(1, 10, 10).reshape(2, 5)
 print(array)

@@ -1,8 +1,11 @@
-import numpy
-
-array = numpy.array([[1, 2, 3], [2, 3, 4]], dtype=numpy.int64)
+import numpy as np
+"""
+新建数组 np.array()
+"""
+array = np.array([[1, 2, 3], [2, 3, 4]], dtype=np.int64)
 print(array)
-print(array.ndim)
-print(array.shape)
-print(array.size)
-print(array.dtype)
+print(type(array))
+print(array.ndim)#维度
+print(array.shape)#形状
+print(array.size)#大小
+print(array.dtype)#数据类型

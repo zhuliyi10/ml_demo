@@ -1,6 +1,6 @@
-import numpy
+import numpy as np
 
-a = numpy.arange(12).reshape(3, 4)
+a = np.arange(12).reshape(3, 4)
 print(a)
-b = numpy.array_split(a, 3, axis=1)
+b = np.array_split(a, 3, axis=1)#对axis维数据进行分割
 print(b)
