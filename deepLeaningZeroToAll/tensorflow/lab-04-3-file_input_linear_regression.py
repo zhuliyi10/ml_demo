@@ -1,9 +1,9 @@
 import numpy as np
 import tensorflow as tf
-
+import os
 tf.set_random_seed(777)  # for reproducibility
 
-xy = np.loadtxt('data-01-test-score.csv', delimiter=',', dtype=np.float32)
+xy = np.loadtxt(os.path.join(os.path.dirname(os.path.abspath(__file__)),'data-01-test-score.csv'), delimiter=',', dtype=np.float32)
 x_data = xy[:, :-1]
 y_data = xy[:, [-1]]
 print(x_data.shape, x_data)
@@ -24,6 +24,7 @@ sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 
 for step in range(2001):
-    cost_val, h_val, _ = sess.run([cost, hypothesis, train], feed_dict={X: x_data, Y: y_data})
+    cost_val, h_val, _ = sess.run(
+        [cost, hypothesis, train], feed_dict={X: x_data, Y: y_data})
     if step % 20 == 0:
-        print(step, cost_val, h_val)
+        print(step, cost_val,hypothesis)

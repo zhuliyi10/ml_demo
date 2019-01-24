@@ -2,10 +2,10 @@ import random
 
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
-
+import os
+mnist = input_data.read_data_sets(os.path.join(os.path.dirname(os.path.abspath(__file__)),"MNIST_data/"), one_hot=True)
 tf.set_random_seed(777)
 
-mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
 # parameters
 learning_rate = 0.001

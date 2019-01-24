@@ -1,8 +1,8 @@
 import tensorflow as tf
 import numpy as np
-
+import os
 tf.set_random_seed(777)
-xy=np.loadtxt('data-03-diabetes.csv',delimiter=',',dtype=np.float32)
+xy=np.loadtxt(os.path.join(os.path.dirname(os.path.abspath(__file__)),'data-03-diabetes.csv'),delimiter=',',dtype=np.float32)
 x_data=xy[:,0:-1]
 y_data=xy[:,[-1]]
 

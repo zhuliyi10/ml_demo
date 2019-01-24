@@ -2,10 +2,10 @@ import tensorflow as tf
 import numpy as np
 from tensorflow.examples.tutorials.mnist import input_data
 import matplotlib.pyplot as plt
-
+import os
 # tf.set_random_seed(777)
 
-mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+mnist = input_data.read_data_sets(os.path.join(os.path.dirname(os.path.abspath(__file__)),"MNIST_data/"), one_hot=True)
 
 print(mnist.train.images.shape, mnist.train.labels.shape)
 nb_classes = 10
